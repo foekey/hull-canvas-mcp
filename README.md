@@ -69,6 +69,26 @@ They all share one file, `~/.gemini/config/mcp_config.json` (Windows: `C:\Users\
 
 On Windows use `"command": "npx.cmd"`. Keep `timeoutSeconds`: Antigravity's default of 180 s per tool call can cut off `login` while you are still signing in.
 
+### OpenCode
+
+`opencode.json` in your project, or the global `~/.config/opencode/opencode.json`. OpenCode uses its own shape (`mcp`, with the command as one array):
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "hull": {
+      "type": "local",
+      "command": ["npx", "-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"],
+      "enabled": true,
+      "timeout": 60000
+    }
+  }
+}
+```
+
+Keep `timeout`: the default of 5 s for fetching tools is shorter than a first-run `npx` download. On Windows, if it can't launch `npx`, use `["cmd", "/c", "npx", "-y", "..."]`. Newer OpenCode releases (V2 docs) nest servers under `mcp.servers` and use `disabled` instead of `enabled`; check their docs if the block above is rejected.
+
 ### VS Code (GitHub Copilot)
 
 `.vscode/mcp.json`, or run **MCP: Add Server**:
