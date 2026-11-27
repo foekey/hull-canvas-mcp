@@ -34,7 +34,7 @@ Needs **Node 18+** and a Chromium browser (Brave, Chrome or Edge) for the one-of
 ### Claude Code
 
 ```sh
-claude mcp add hull -- npx -y github:foekey/hull-canvas-mcp
+claude mcp add hull -- npx -y https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main
 ```
 
 ### Claude Desktop, Cursor, Windsurf, Cline, Gemini CLI, JetBrains AI Assistant
@@ -44,12 +44,12 @@ Add to the client's MCP JSON (`claude_desktop_config.json`, `~/.cursor/mcp.json`
 ```json
 {
   "mcpServers": {
-    "hull": { "command": "npx", "args": ["-y", "github:foekey/hull-canvas-mcp"] }
+    "hull": { "command": "npx", "args": ["-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"] }
   }
 }
 ```
 
-On Windows, if a client can't launch `npx` directly, use `"command": "cmd", "args": ["/c", "npx", "-y", "github:foekey/hull-canvas-mcp"]`.
+On Windows, if a client can't launch `npx` directly, use `"command": "cmd", "args": ["/c", "npx", "-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"]`.
 
 ### VS Code (GitHub Copilot)
 
@@ -58,7 +58,7 @@ On Windows, if a client can't launch `npx` directly, use `"command": "cmd", "arg
 ```json
 {
   "servers": {
-    "hull": { "type": "stdio", "command": "npx", "args": ["-y", "github:foekey/hull-canvas-mcp"] }
+    "hull": { "type": "stdio", "command": "npx", "args": ["-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"] }
   }
 }
 ```
@@ -70,7 +70,7 @@ On Windows, if a client can't launch `npx` directly, use `"command": "cmd", "arg
 ```json
 {
   "context_servers": {
-    "hull": { "command": { "path": "npx", "args": ["-y", "github:foekey/hull-canvas-mcp"] } }
+    "hull": { "command": { "path": "npx", "args": ["-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"] } }
   }
 }
 ```
@@ -82,7 +82,7 @@ On Windows, if a client can't launch `npx` directly, use `"command": "cmd", "arg
 ```toml
 [mcp_servers.hull]
 command = "npx"
-args = ["-y", "github:foekey/hull-canvas-mcp"]
+args = ["-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"]
 ```
 
 ### From a local clone
