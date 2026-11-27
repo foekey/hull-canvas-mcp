@@ -1,0 +1,24 @@
+{
+  "name": "hull-canvas-mcp",
+  "version": "2.0.0",
+  "description": "MCP server for University of Hull Canvas and Panopto: assignments, briefs, rubrics, files and AI lecture summaries, built to be cheap on tokens.",
+  "type": "module",
+  "bin": { "hull-canvas-mcp": "index.js" },
+  "files": ["index.js", "session.js", "README.md", "LICENSE"],
+  "scripts": {
+    "start": "node index.js",
+    "login": "node -e \"import('./session.js').then(m=>m.login()).then(console.log).then(()=>process.exit(0))\"",
+    "smoke": "node test.mjs"
+  },
+  "keywords": ["mcp", "model-context-protocol", "canvas", "panopto", "lms", "university-of-hull"],
+  "repository": { "type": "git", "url": "git+https://github.com/foekey/hull-canvas-mcp.git" },
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "mammoth": "^1.13.0",
+    "playwright-core": "^1.65.1",
+    "unpdf": "^2.2.3",
+    "zod": "^4.6.7"
+  }
+}
