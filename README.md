@@ -51,6 +51,24 @@ Add to the client's MCP JSON (`claude_desktop_config.json`, `~/.cursor/mcp.json`
 
 On Windows, if a client can't launch `npx` directly, use `"command": "cmd", "args": ["/c", "npx", "-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"]`.
 
+### Google Antigravity (IDE, CLI and 2.0)
+
+They all share one file, `~/.gemini/config/mcp_config.json` (Windows: `C:\Users\<you>\.gemini\config\mcp_config.json`); a project can add its own at `.agents/mcp_config.json`. In the IDE: agent panel **...** > **MCP Servers** > **Manage MCP Servers** > **View raw config**.
+
+```json
+{
+  "mcpServers": {
+    "hull": {
+      "command": "npx",
+      "args": ["-y", "https://codeload.github.com/foekey/hull-canvas-mcp/tar.gz/refs/heads/main"],
+      "timeoutSeconds": 600
+    }
+  }
+}
+```
+
+On Windows use `"command": "npx.cmd"`. Keep `timeoutSeconds`: Antigravity's default of 180 s per tool call can cut off `login` while you are still signing in.
+
 ### VS Code (GitHub Copilot)
 
 `.vscode/mcp.json`, or run **MCP: Add Server**:
